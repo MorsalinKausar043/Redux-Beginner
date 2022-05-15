@@ -17,10 +17,10 @@ const multiNum = (num) =>{
     }
 }
 
-const diviNum = () =>{
+const deviNum = () =>{
     return{
         type:"DEVIDE"
     }
 }
 
-export {increNum, decreNum, multiNum, diviNum};
+export {increNum, decreNum, multiNum, deviNum};

@@ -2,11 +2,12 @@ import React from "react";
 import { GrSubtractCircle, GrAddCircle } from "react-icons/gr";
 import { FaDivide } from "react-icons/fa";
 import { useSelector, useDispatch } from "react-redux";
-import {increNum, decreNum} from "./action/index";
+import {increNum, decreNum, multiNum, deviNum} from "./action/index";
 
 const App = () => {
 
   const myState = useSelector((state) => state.changeTheNumber);
+  const multiDevideState = useSelector((state) => state.multDevideChange);
   const dispatch = useDispatch();
 
   return (
@@ -57,19 +58,19 @@ const App = () => {
           <div className="flex flex-row justify-center items-center">
             <button
               className="bg-yellow-300 p-2 text-3xl font-semibold rounded-lg shadow-2xl"
-              onClick={() => dispatch(decreNum())}
+              onClick={() => dispatch(deviNum())}
             >
               <FaDivide />
             </button>
             <input
               className="mx-2 w-20 p-2 text-3xl text-center rounded-2xl shadow-2xl outline-none cursor-grab"
               type="text"
-              value={myState}
+              value={multiDevideState}
               readOnly
             />
             <button
               className="bg-yellow-300 p-2 text-4xl font-bold rounded-lg shadow-2xl"
-              onClick={() => dispatch(increNum(5))}
+              onClick={() => dispatch(multiNum(5))}
             >
               &#215;
             </button>
